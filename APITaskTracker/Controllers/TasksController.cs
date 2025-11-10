@@ -1,6 +1,6 @@
 ﻿using APITaskTracker.Data.Model;
+using APITaskTracker.Data.Repository.Interface;
 using Microsoft.AspNetCore.Mvc;
-using TaskTracker.Data.Repository.Interface;
 
 namespace APITaskTracker.Controllers
 {

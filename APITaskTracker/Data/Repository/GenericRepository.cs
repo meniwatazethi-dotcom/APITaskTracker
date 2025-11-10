@@ -1,9 +1,9 @@
 ﻿namespace TaskTracker.Data.Repository
 {
     using APITaskTracker.Data;
+    using APITaskTracker.Data.Repository.Interface;
     using Microsoft.EntityFrameworkCore;
     using System.Linq.Expressions;
-    using TaskTracker.Data.Repository.Interface;
 
     public class GenericRepository<T>(AppDbContext context) : IGenericRepository<T> where T : class
     {

@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace TaskTracker.Data.Repository.Interface
+namespace APITaskTracker.Data.Repository.Interface
 {
     public interface IGenericRepository<T> where T : class
     {

@@ -1,9 +1,8 @@
-﻿using TaskTracker.Data.Repository.Interface;
-
-namespace TaskTracker.Data.Repository
+﻿namespace TaskTracker.Data.Repository
 {
     using APITaskTracker.Data;
     using APITaskTracker.Data.Model;
+    using APITaskTracker.Data.Repository.Interface;
     using Microsoft.EntityFrameworkCore;
 
     public class TaskRepository : GenericRepository<TaskItem>, ITaskRepository

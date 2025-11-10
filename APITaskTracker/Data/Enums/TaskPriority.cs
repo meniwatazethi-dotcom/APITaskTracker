@@ -1,4 +1,4 @@
-﻿namespace TaskTracker.Data.Enums
+﻿namespace APITaskTracker.Data.Enums
 {
     public enum TaskPriority
     {

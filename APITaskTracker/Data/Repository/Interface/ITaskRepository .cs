@@ -1,6 +1,6 @@
 ﻿using APITaskTracker.Data.Model;
 
-namespace TaskTracker.Data.Repository.Interface
+namespace APITaskTracker.Data.Repository.Interface
 {
     public interface ITaskRepository : IGenericRepository<TaskItem>
     {

@@ -1,6 +1,6 @@
-﻿using APITaskTracker.Data.Model;
+﻿using APITaskTracker.Data.Enums;
+using APITaskTracker.Data.Model;
 using Microsoft.EntityFrameworkCore;
-using TaskTracker.Data.Enums;
 
 namespace APITaskTracker.Data
 {
