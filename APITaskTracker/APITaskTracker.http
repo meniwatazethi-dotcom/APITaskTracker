@@ -1,0 +1,6 @@
+@APITaskTracker_HostAddress = http://localhost:5225
+
+GET {{APITaskTracker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
