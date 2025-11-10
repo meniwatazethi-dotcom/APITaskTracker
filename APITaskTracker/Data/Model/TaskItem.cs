@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TaskTracker.Data.Enums;
 
 namespace APITaskTracker.Data.Model
 {
