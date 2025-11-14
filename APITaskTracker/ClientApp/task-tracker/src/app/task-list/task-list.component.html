@@ -1,0 +1,90 @@
+<div class="container py-4">
+  <h2 class="mb-3">Task List</h2>
+
+  <!-- Toolbar -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="input-group w-50">
+      <input type="text" class="form-control" [(ngModel)]="searchText"
+        placeholder="Search by title or description..." />
+      <button class="btn btn-outline-secondary" type="button" (click)="loadTasks()">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+
+    <div>
+      <button class="btn btn-primary me-2" (click)="sortBy('duedate:asc')">
+        Due <i class="bi bi-arrow-up"></i>
+      </button>
+      <button class="btn btn-outline-primary me-2" (click)="sortBy('duedate:desc')">
+        Due <i class="bi bi-arrow-down"></i>
+      </button>
+      <button class="btn btn-success" (click)="newTask()">
+        <i class="bi bi-plus-circle"></i> New Task
+      </button>
+    </div>
+  </div>
+
+  <!-- Spinner (when loading) -->
+  <div class="text-center my-5" *ngIf="isLoading">
+    <div class="spinner-border text-purple" role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- No tasks message -->
+  <div *ngIf="!isLoading && tasks.length === 0" class="text-center text-muted my-5">
+    <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+    <p>No tasks found.</p>
+  </div>
+
+  <div *ngIf="!isLoading && tasks.length > 0">
+    <!-- Header Row -->
+    <div class="row fw-bold text-muted border-bottom pb-2 mb-2">
+      <div class="col-md-2">Title</div>
+      <div class="col-md-3">Description</div>
+      <div class="col-md-1 text-center">Status</div>
+      <div class="col-md-1 text-center">Priority</div>
+      <div class="col-md-2 text-center">Due Date</div>
+      <div class="col-md-2 text-center">Created At</div>
+      <div class="col-md-1 text-end">Actions</div>
+    </div>
+
+    <!-- Task Rows -->
+    <div class="row align-items-center border-bottom py-2" *ngFor="let task of tasks">
+      <div class="col-md-2">
+        <strong>{{ task.title }}</strong>
+      </div>
+
+      <div class="col-md-3 description-cell">{{ task.description }}</div>
+
+      <div class="col-md-1 text-center">
+        <span class="badge bg-info text-dark">{{ getStatusName(task.status) }}</span>
+      </div>
+
+      <div class="col-md-1 text-center">
+        <span class="badge bg-secondary">{{ getPriorityName(task.priority) }}</span>
+      </div>
+      <div class="col-md-2 text-center">
+        {{ task.dueDate | date: 'yyyy-MM-dd' }}
+      </div>
+
+      <div class="col-md-2 text-center">
+        {{ task.createdAt | date: 'yyyy-MM-dd' }}
+      </div>
+
+      <div class="col-md-1 text-end">
+        <button class="btn btn-sm btn-outline-primary me-2" (click)="editTask(task.id)">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-danger" (click)="deleteTask(task.id)">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error" class="alert alert-danger mt-3">
+    {{ error }}
+  </div>
+</div>
