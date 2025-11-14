@@ -1,0 +1,43 @@
+.description-cell {
+  max-height: 3.5em;       
+  overflow-y: auto;       
+  overflow-x: auto;           
+  white-space: pre-wrap;      
+  word-wrap: break-word;      
+  font-size: 0.95rem;        
+}
+
+.description-cell::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.description-cell::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.row.align-items-center {
+  display: flex;
+  align-items: stretch; 
+}
+
+.text-purple {
+  color: #6f42c1 !important; 
+}
+
+.spinner-border.text-purple {
+  border-color: #6f42c1;
+  border-right-color: transparent;
+}
+
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;              /* space between icons */
+}
+
+.action-buttons .btn {
+  padding: 4px 6px;      /* small, compact buttons */
+}

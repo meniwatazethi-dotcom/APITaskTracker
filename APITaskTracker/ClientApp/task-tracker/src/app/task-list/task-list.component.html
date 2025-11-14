@@ -10,7 +10,7 @@
         <i class="bi bi-search"></i>
       </button>
     </div>
-
+<!-- 
     <div>
       <button class="btn btn-primary me-2" (click)="sortBy('duedate:asc')">
         Due <i class="bi bi-arrow-up"></i>
@@ -21,7 +21,31 @@
       <button class="btn btn-success" (click)="newTask()">
         <i class="bi bi-plus-circle"></i> New Task
       </button>
-    </div>
+    </div> -->
+
+<div>
+  <button
+    class="btn me-2"
+    [ngClass]="sortOrder === 'duedate:asc' ? 'btn-primary' : 'btn-outline-primary'"
+    (click)="sortBy('duedate:asc')"
+  >
+    Due <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <button
+    class="btn me-2"
+    [ngClass]="sortOrder === 'duedate:desc' ? 'btn-primary' : 'btn-outline-primary'"
+    (click)="sortBy('duedate:desc')"
+  >
+    Due <i class="bi bi-arrow-down"></i>
+  </button>
+
+  <button class="btn btn-success" (click)="newTask()">
+    <i class="bi bi-plus-circle"></i> New Task
+  </button>
+</div>
+
+
   </div>
 
   <!-- Spinner (when loading) -->
@@ -72,14 +96,14 @@
         {{ task.createdAt | date: 'yyyy-MM-dd' }}
       </div>
 
-      <div class="col-md-1 text-end">
-        <button class="btn btn-sm btn-outline-primary me-2" (click)="editTask(task.id)">
-          <i class="bi bi-pencil"></i>
-        </button>
-        <button class="btn btn-sm btn-outline-danger" (click)="deleteTask(task.id)">
-          <i class="bi bi-search"></i>
-        </button>
-      </div>
+      <div class="col-md-1 action-buttons">
+  <button class="btn btn-sm btn-outline-primary" (click)="editTask(task.id)">
+    <i class="bi bi-pencil"></i>
+  </button>
+  <button class="btn btn-sm btn-outline-danger" (click)="deleteTask(task.id)">
+    <i class="bi bi-trash"></i>
+  </button>
+</div>
     </div>
   </div>
 

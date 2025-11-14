@@ -28,6 +28,7 @@ TaskItemStatus = TaskItemStatus;
   isLoading = false;
 
   searchText = '';
+  activeSort: string = '';
   sortOrder: 'duedate:asc' | 'duedate:desc' = 'duedate:asc';
 
   constructor(
