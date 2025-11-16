@@ -47,7 +47,6 @@ TaskItemStatus = TaskItemStatus;
 
     this.taskService.getAll(this.searchText, this.sortOrder).subscribe({
       next: (data) => {
-        debugger
         this.tasks = data;
         this.isLoading = false;
         this.cdr.detectChanges();

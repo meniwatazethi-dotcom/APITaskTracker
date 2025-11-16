@@ -14,7 +14,6 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   getAll(description?: string, dueDate?: string): Observable<TaskItem[]> {
-    debugger
     let params = new HttpParams();
     if (description) params = params.set('description', description);
     if (dueDate) params = params.set('dueDate', dueDate);
@@ -29,7 +28,6 @@ export class TaskService {
   }
 
   create(task: TaskItem) {
-    debugger
     return this.http.post<TaskItem>(this.baseUrl, task)
       .pipe(catchError(this.handleError));
   }
