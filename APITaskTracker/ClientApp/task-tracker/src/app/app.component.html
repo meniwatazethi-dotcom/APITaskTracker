@@ -1,0 +1,49 @@
+<div class="d-flex flex-column min-vh-100">
+
+  <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a
+              routerLink="/tasks"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link text-white"
+              >Tasks</a
+            >
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center ms-auto gap-2">
+          <a
+            class="navbar-brand fw-bold text-white"
+            routerLink="/tasks"
+          >
+            {{ title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-fill container py-4">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="bg-dark text-light text-center py-3 mt-auto shadow-sm">
+    <small>
+      © {{ today | date:'yyyy' }} • {{title}} — {{ today | date:'fullDate' }}
+    </small>
+  </footer>
+</div>
