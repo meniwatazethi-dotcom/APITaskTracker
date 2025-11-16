@@ -34,7 +34,7 @@ CRUD-based applications and educational setups where clean layering and testabil
 Angular Frontend Consuming API
 Technology Choice
 
-You selected Angular to build the frontend solution because it provides a strong, opinionated structure and works well for enterprise-style applications that consume REST APIs. Using the Angular CLI ensured that the project was created with best-practice scaffolding, clear folder organization, and built-in tooling.
+I selected Angular to build the frontend solution because it provides a strong, opinionated structure and works well for enterprise-style applications that consume REST APIs. Using the Angular CLI ensured that the project was created with best-practice scaffolding, clear folder organization, and built-in tooling.
 
 Framework & Tooling
 
