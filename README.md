@@ -1,7 +1,7 @@
 Task Tracker – Local Setup Guide
 1. Clone the Repository
-Clone the project from the GitHub link provided:
-git clone
+Clone the project from the GitHub link provided: https://github.com/meniwatazethi-dotcom/APITaskTracker.git
+
 2. Open and Run the API with Visual Studio
 - Open Visual Studio.
 - Load the cloned solution.
